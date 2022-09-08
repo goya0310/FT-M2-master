@@ -1,0 +1,3 @@
+* DOM: es el que cuando entras a una pagina web, al cargarse toma todo el contenido de codigo que esta detrás (HTML), lo maqueta o modela para que veas la pagina con el estilo que se vé
+* DOM element selectors: permiten buscar y seleccionar elementos del codigo de la pagina web para luego poder mostrarlos, modificarlos o eliminarlos
+* DOM events: un evento es todo lo que el usuario hace al interactuar con la pagina, se puede responder de alguna forma a lo que el usuario con un event listener
