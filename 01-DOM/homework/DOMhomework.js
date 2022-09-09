@@ -61,19 +61,39 @@ function buildToDo(todo, index) {
   let toDoShell = document.createElement('div'); 
   // clase de atributos, se puede usar .setAttribute('class', 'toDoShell')
   toDoShell.className = 'toDoShell'; 
+  
+  // CON toDoText:
   let toDoText = document.createElement('span');
   // adentro de span se pone lo que sea que haya en descripcion del objeto ToDo
   toDoText.innerHTML = todo.description;
   // tambien se puede hacer .setAttribute('id', index) 
-  toDoText.id = index;
+  // // toDoText.id = index;
   if(todo.complete){
     toDoText.className = 'completeText';
   }
   // toDoText se pone dentro de toDoShell
   toDoShell.appendChild(toDoText);
   // agregar el event Listener
-  toDoText.addEventListener('click', completeToDo);
-
+  // toDoText.addEventListener('click', completeToDo);
+  
+  //con Checkbox:
+  //Crear un checkbox en la función 'buildToDo'
+  let elemInput = document.createElement('INPUT');
+  elemInput.setAttribute('type','checkbox');
+  elemInput.innerText = todo.description;
+  //Asignarle como id a dicho checkbox el valor del index y quitar el id del index de toDoText
+  elemInput.id = index;
+  // Asignarle la clase 'completeCheckbox' al checkbox
+  elemInput.className = 'completeCheckbox';
+  //Dentro del bloque 'if' de la función buildToDo, si es true, setear el atributo 'checked' en true en el checkbox
+  if(todo.complete){
+    elemInput.setAttribute('checked', true);
+  }
+  // Agregar el checkbox sobre el elemento 'toDoShell'
+  toDoShell.appendChild(elemInput);
+  //Agregarle al checkbox el 'click' event listener de completeToDo y quitárle el event listener a toDoText
+  elemInput.addEventListener('click', completeToDo);
+  
   return toDoShell;
 }
 
