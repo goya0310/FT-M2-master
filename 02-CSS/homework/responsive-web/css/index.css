@@ -185,6 +185,8 @@ nav {
   justify-content: center;
   align-items: center;
   background-color: #F6F6F6;
+  border: #F1F1F1 solid 2px;
+  padding-top: 10px;
 }
 nav ul {
   display: flex;
@@ -215,19 +217,20 @@ footer {
   justify-content: center;
   align-items: center;
 }
-.home .intro img {
-  border-radius: 20px;
-}
-@media (max-width: 500px) {
-  .home .intro img {
-    width: 100%;
-  }
-}
 .home .intro h2 {
   padding: 15px;
 }
 .home .intro p {
   padding: 0 15px;
+}
+.home img {
+  border-radius: 20px;
+  margin: 5px;
+}
+@media (max-width: 500px) {
+  .home img {
+    width: 100%;
+  }
 }
 .home .music-images {
   display: flex;
@@ -313,6 +316,7 @@ footer {
   background-color: white;
   color: black;
   border: 1px solid black;
+  cursor: pointer;
 }
 @media (max-width: 500px) {
   .home .actual .actual-text .btn {
@@ -326,6 +330,7 @@ footer {
 @media (max-width: 500px) {
   .home .actual .actual-img {
     width: 100%;
+    margin-right: 8%;
   }
 }
 .home .actual .actual-img img {
