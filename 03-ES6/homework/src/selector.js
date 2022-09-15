@@ -1,11 +1,5 @@
 var traverseDomAndCollectElements = function(matchFunc, startEl) {
   var resultSet = [];
-  // var $ = function(selector) {
-  //   var elements;
-  //   var selectorMatchFunc = matchFunctionMaker(selector);
-  //   elements = traverseDomAndCollectElements(selectorMatchFunc);
-  //   return elements;
-  // };
   if (typeof startEl === "undefined") {
     startEl = document.body;
   }
@@ -14,11 +8,12 @@ var traverseDomAndCollectElements = function(matchFunc, startEl) {
   // usa matchFunc para identificar elementos que matchien
   
   // TU CÓDIGO AQUÍ
-  if(matchFunc(startEl)) resultSet.push(startEl);
-  for (let i = 0; i<startEl.children.length; i++){
+  if(matchFunc(startEl)) resultSet.push(startEl); // si el elemento inicial matchea pushear
+  for (let i = 0; i<startEl.children.length; i++){ // sino se hace un array con todos los nodos hijos
     const child = startEl.children[i];
+    // hago recursion con child, si matchea para que resultSet no se pierda x scope se guarda resultado en vble
     let found = traverseDomAndCollectElements(matchFunc, child); // va guardando los resultSet en cada recursion
-    resultSet = [...resultSet, ...found] // concateno los rdos
+    resultSet = [...resultSet, ...found] // concateno los rdos, si un una recursion no matchea no pasa nada al concatenar
   }
 
   return resultSet;
@@ -34,6 +29,7 @@ var selectorTypeMatcher = function(selector) {
   if(selector[0] === '#') return 'id';
   if(selector[0] === '.') return 'class';
   if(selector.split('.').length > 1) return 'tag.class';
+  // if(selector.split('>').length > 1) return 
   else return 'tag'
 };
 
@@ -45,21 +41,21 @@ var selectorTypeMatcher = function(selector) {
 var matchFunctionMaker = function(selector) {
   
   var selectorType = selectorTypeMatcher(selector);
-  var matchFunction = function (sample){
+  var matchFunction = function (elemento){
   if (selectorType === "id") { 
-    return sample.id === selector.substring(1);  
+    return elemento.id === selector.substring(1);  
   } else if (selectorType === "class") {
-    if(sample.classList.contains(`${selector.substring(1)}`)) return true;
-    else return sample.className === selector.substring(1);
+    if(elemento.classList.contains(`${selector.substring(1)}`)) return true;
+    else return elemento.className === selector.substring(1);
   } else if (selectorType === "tag.class") {
-    if(sample.tagName && (sample.tagName.toLowerCase() === selector.split('.')[0].toLowerCase())){
-      if(sample.classList.contains(`${selector.split('.')[1].toLowerCase()}`)) return true;
-      else return sample.className === selector.split('.')[1].toLowerCase();
+    if(elemento.tagName && (elemento.tagName.toLowerCase() === selector.split('.')[0].toLowerCase())){
+      if(elemento.classList.contains(`${selector.split('.')[1].toLowerCase()}`)) return true;
+      else return elemento.className === selector.split('.')[1].toLowerCase();
     }
     else return false;
     
   } else if (selectorType === "tag") {
-    return sample.tagName && (sample.tagName.toLowerCase() === selector.toLowerCase());
+    return elemento.tagName && (elemento.tagName.toLowerCase() === selector.toLowerCase());
   }
   };
   return matchFunction;
