@@ -1,5 +1,5 @@
 
-  import EventEmitter from "./event-emmiter"; // agrego este
+  import EventEmitter from "./event-emitter.js"; // agrego este
 
   const whiteboard = new EventEmitter();
 
