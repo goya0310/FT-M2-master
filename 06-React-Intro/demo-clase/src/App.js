@@ -33,7 +33,8 @@ class Saludo extends React.Component {
   }
   render(){
     return (
-      <h1>
+      //paso la funcion alerta, al hacer click en el h1 salta la alerta
+      <h1 onClick={this.props.onAlert}>
         Hola {this.props.name} 👋
       </h1>
     );
