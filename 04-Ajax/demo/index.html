@@ -15,16 +15,39 @@
     var index = 1;
     $('.boton').click(function () {
       // GET AJAX
-      $.get("https://jsonplaceholder.typicode.com/photos/" + index, function (data) {
-        // vanilla javascript
-        var img = document.createElement('img');
-        img.src = dataAca.url;
-        var title = document.createElement('h3');
-        title.textContent = dataAca.title;
-        $('#respuesta').append(img);
-        $('#respuesta').append(title);
-        index++;
+      // $.get("https://jsonplaceholder.typicode.com/photos/" + index, function (data) {
+      //   // vanilla javascript
+      //   var img = document.createElement('img');
+      //   img.src = dataAca.url;
+      //   var title = document.createElement('h3');
+      //   title.textContent = dataAca.title;
+      //   $('#respuesta').append(img);
+      //   $('#respuesta').append(title);
+      //   index++;
+      // });
+      // se puede hacer un Get, que es un método Jquery que setea Ajax
+      $.ajax("https://jsonplaceholder.typicode.com/users", {
+        method: 'GET' // para delete solo de esta forma
+      }).done(function (data){
+        console.table(data);
+
+        data.forEach(user => {
+          const el = document.createElement('h1');
+          el.innerHTML = user.name;
+          $('#respuesta').append(el);
+          
+        });
       });
+      // $.get("https://jsonplaceholder.typicode.com/users", function (data){
+      //   console.table(data);
+
+      //   data.forEach(user => {
+      //     const el = document.createElement('h1');
+      //     el.innerHTML = user.name;
+      //     $('#respuesta').append(el);
+          
+      //   });
+      // });
 
     });
   </script>

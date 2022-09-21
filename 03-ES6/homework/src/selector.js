@@ -43,7 +43,7 @@ var matchFunctionMaker = function(selector) {
   var selectorType = selectorTypeMatcher(selector);
   var matchFunction = function (elemento){
   if (selectorType === "id") { 
-    return elemento.id === selector.substring(1);  
+    return elemento.id === selector.substring(1);  // o `#${elemento.id}`
   } else if (selectorType === "class") {
     if(elemento.classList.contains(`${selector.substring(1)}`)) return true;
     else return elemento.className === selector.substring(1);

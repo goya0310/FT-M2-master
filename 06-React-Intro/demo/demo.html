@@ -6,13 +6,15 @@
 </head>
 <body>
   <div id='app'></div>
-
+  <!-- Libreria React -->
   <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <!-- interconexion con react dom -->
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
 
-  const element = <h1>Hello, world!</h1>;
+  // const element = <h1>Hello, world!</h1>;
 
   
   // function formatName(user) {
@@ -65,9 +67,46 @@
   //     </div>
   //   )
   // }
+  function Container (){
+    const users = [
+    {
+      name: 'Toni',
+      lastname: 'Tralice',
+      id: 0
+    },
+    {
+      name: 'Fran',
+      lastname: 'Etcheverri',
+      id: 1
+    },
+    {
+      name: 'Agustin',
+      lastname: 'Amani',
+      id: 2
+    }
+  ]
+    return (
+      <div>
+        {
+        users.map((users, i) => (
+          <Saludo user={users} key={i} /> // se le agrega key igual al indice para que no de error, sino dentro de cada usuario crear un id y pasar key={user.id}
+        ))
+        }
+        </div>
+    );
+  };
 
+  function Saludo (props){ // props es un objeto que recibe todas las propiedades que le vamos a pasar
+    
+    return (
+    <h1>
+      Hola, {props.user.name} {props.user.lastname} 👋
+    </h1>
+    );
+  };
+//  agarra componente de react y le pasamos donde queremos inyectarlo, en este caso dentro de app
   ReactDOM.render(
-    element,
+    <Container />, // puedo ponerle <Saludo/> y me lo va a renderizar
     document.getElementById('app')
   );
   </script>

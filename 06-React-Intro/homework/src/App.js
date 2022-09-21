@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <div>
+        {/* solicita y pasa como props al modulo Card lo siguiente*/}
         <Card
           max={Cairns.main.temp_max}
           min={Cairns.main.temp_min}
@@ -19,6 +20,7 @@ function App() {
       </div>
       <hr />
       <div>
+        {/* pasa como props a Cards las ciudades en data.js  */}
         <Cards
           cities={data}
         />

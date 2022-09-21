@@ -2,5 +2,9 @@ import React from 'react';
 
 export default function SearchBar(props) {
   // acá va tu código
-  return <div>Search Bar Component</div>
+  // inserta un formulario
+  return <form>
+    <input placeholder="Ciudad..." />
+    <input type="submit" value="Agregar" />
+  </form>
 };
