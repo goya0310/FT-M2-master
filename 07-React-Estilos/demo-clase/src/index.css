@@ -1,0 +1,27 @@
+/* puedo buscar fuentes en fonts.google.com */
+
+/* aplico font descargada de google, en el body es para toda la pagina */
+body {
+  font-family: 'Noto Sans', sans-serif;
+  /* coolors.co para ver colores */
+  /* background-color: #dee2e6; */
+  background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-1.2.1&dl=v2osk-1Z2niiBPg5A-unsplash.jpg&w=2400&q=80&fm=jpg&crop=entropy&cs=tinysrgb');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*cada navegador cambia margenes x ej, https://necolas.github.io/normalize.css/   */
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background-color: #ffffff86;
+  display: flex;
+  /* justify-content: center; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  /* ver propiedad siguiente */
+  box-sizing: border-box;
+  backdrop-filter: blur(4px);
+  border-bottom: 0.5px solid #ffffffa9;
+}

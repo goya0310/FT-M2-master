@@ -1,0 +1,50 @@
+/* se crea este archivo con ccs module */
+/* traigo libreria de react icons: npm install react.icons --save 
+se busca lo que me interesa en sitio web react icons*/
+/* si quisiera agregar animaciones modules no sirve mucho, ver CSS animations en Mozzilla y framer motion (buscar en google) */
+
+.searchBar {
+    border: solid 1px #8d99ae;
+    /* ajusta el ancho al contendo */
+    width: fit-content;
+    border-radius: 4px;
+    /* ocultamos lo que supere el tamaño de mi componente ocultamos */
+    overflow: hidden;
+    display: flex;
+    height: 48px;
+    align-items: center;
+    /* grabient sitio web para ver gradientes */
+    box-shadow: 1px 1px 4px #8d99ae;
+    background-color: white;
+}
+.icon {
+    margin: 8px 16px;
+    color: #8d99ae;
+}
+.input::placeholder {
+    font-family: 'Noto Sans', 'sans-serif';
+    font-weight: 300;
+    text-transform: capitalize;
+
+}
+.input {
+    padding: 8px;
+    border:none;
+    font-family: 'Noto Sans', sans-serif;
+}
+/* estados de css */
+.input:focus {
+    outline: none;
+}
+
+.submit {
+    background-color: #3a86ff;
+    border: none;
+    color: white;
+    height: 100%;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 4px;
+    min-width: 48px;
+    font-weight: 700;
+}
