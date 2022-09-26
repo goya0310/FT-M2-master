@@ -52,6 +52,7 @@
 .Button:hover {
     background-color: var(--btn-bkg-danger-hover);
 }
+
 /* en section dentro de card */
 .Card > section {
     display: grid;
