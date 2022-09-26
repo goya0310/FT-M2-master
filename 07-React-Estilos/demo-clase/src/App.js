@@ -4,6 +4,7 @@ import Header from './components/Header';
 import SearchBar from './components/SearchBar';
 import Avatar from './components/Avatar';
 
+
 function App() {
   return (
     <div>

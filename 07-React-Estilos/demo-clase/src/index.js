@@ -6,6 +6,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// para buscar en que diseños inspirarse pinterest, dribble, unsplash para imagenes
+
 // para trabajar con otra libreria npm i styled-components, en componets Avatar.jsx
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
