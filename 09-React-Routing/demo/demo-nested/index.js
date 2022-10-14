@@ -14,7 +14,7 @@ function NavBar() {
 };
 
 function Home() {
-  let match = useRouteMatch();
+  let match = useRouteMatch("/:slug");
   return (
     <div>
       <h2>Home, Soy Henry!!</h2>

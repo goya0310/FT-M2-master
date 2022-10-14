@@ -50,4 +50,8 @@ store.dispatch(addTodo('Correr'))
 
 store.dispatch(removeTodo(1))
 
-console.log(store.getState());
+var unsuscribe = store.subscribe(() => {
+  console.log(store.getState());
+})
+
+unsuscribe();
